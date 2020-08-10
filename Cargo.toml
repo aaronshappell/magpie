@@ -3,7 +3,8 @@ name = "magpie"
 version = "0.1.0"
 authors = [
     "Dylan Thinnes <dylan.thinnes@protonmail.com>",
-    "Aaron Shappell <aaronshappell@gmail.com>"
+    "Aaron Shappell <aaronshappell@gmail.com>",
+    "Ryan Shappell <hoovcat99@gmail.com>"
 ]
 edition = "2018"
 
