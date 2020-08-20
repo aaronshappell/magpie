@@ -1,1 +1,0 @@
-pub const DISCORD_TOKEN: &str = "NzQ1ODE5NDQwMTA0MzQxNTE2.Xz3Uew.ovcTtlWB4vvwZCVKkDjoCEueL3U";
