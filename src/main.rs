@@ -13,7 +13,7 @@ use serenity::framework::standard::{
 mod tokens;
 
 #[group]
-#[commands(ping)]
+#[commands(ping, checkem)]
 struct General;
 
 struct Handler;
@@ -43,6 +43,23 @@ async fn main() {
 #[command]
 async fn ping(ctx: &Context, msg: &Message) -> CommandResult {
     msg.reply(ctx, "Pong!").await?;
+
+    Ok(())
+}
+
+#[command]
+async fn checkem(ctx: &Context, msg: &Message) -> CommandResult {
+    println!("Rolling: {:?}", msg.id);
+    let num : &u64 = msg.id.as_u64();
+
+    let reply;
+    if (num % 100) % 11 == 0 {
+        reply = format!("You rolled a `{}`. Checked n' kek'd, my friend.", num);
+    } else {
+        reply = format!("You rolled a `{}`. No digits. Sad.", num);
+    }
+
+    msg.reply(ctx, reply).await?;
 
     Ok(())
 }
