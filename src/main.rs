@@ -11,11 +11,11 @@ use serenity::framework::standard::{
 };
 
 mod tokens;
-
 mod whois;
 
 
-#[commands(ping,whois,checkem)]
+#[group]
+#[commands(ping, checkem)]
 struct General;
 
 struct Handler;
