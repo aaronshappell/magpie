@@ -12,8 +12,12 @@ use serenity::framework::standard::{
 
 mod tokens;
 
+mod whois;
+
+
+
 #[group]
-#[commands(ping)]
+#[commands(ping,whois)]
 struct General;
 
 struct Handler;
@@ -43,6 +47,20 @@ async fn main() {
 #[command]
 async fn ping(ctx: &Context, msg: &Message) -> CommandResult {
     msg.reply(ctx, "Pong!").await?;
+
+    Ok(())
+}
+
+
+#[command]
+async fn whois(ctx: &Context, msg: &Message) -> CommandResult {
+
+    let name = &(msg.content)[7..];
+    let r = whois::get_message(name);
+    match r {
+        Ok(m) => {msg.reply(ctx, m).await?;},
+        Err(e) => {msg.reply(ctx,e).await?;},
+    }
 
     Ok(())
 }

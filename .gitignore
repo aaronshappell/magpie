@@ -15,3 +15,12 @@ Cargo.lock
 
 # Tokens
 src/tokens.rs
+
+
+
+
+
+
+#CLion
+/.idea
+/src/ids/*
