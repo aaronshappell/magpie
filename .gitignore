@@ -14,4 +14,4 @@ Cargo.lock
 /target
 
 # Tokens
-src/tokens.rs
+.env
